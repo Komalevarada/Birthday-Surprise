@@ -7,293 +7,647 @@
 <title>Happy Birthday Sudhi ❤️</title>
 
 <style>
-* { box-sizing:border-box; }
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
 body {
-  margin:0;
-  font-family:Georgia,serif;
-  color:#713b50;
-  text-align:center;
-  background:linear-gradient(135deg,#fff0f5,#f9dce9,#fff4df);
-  overflow-x:hidden;
+  font-family: Georgia, serif;
+  background: linear-gradient(135deg,#fff0f3,#fce0e9,#fff5df);
+  color: #693b50;
+  text-align: center;
+  overflow-x: hidden;
 }
-header { padding:55px 18px 25px; }
-h1 { color:#a83e70; font-size:clamp(34px,7vw,60px); margin:12px 0; }
-h2 { color:#a83e70; }
-.gold { color:#bd9142; }
-section {
-  max-width:850px;
-  margin:22px auto;
-  padding:28px 20px;
-  width:92%;
-  background:#ffffffc9;
-  border:1px solid #e9c98b;
-  border-radius:22px;
-  box-shadow:0 8px 28px #a64d7020;
-}
+
 button {
-  background:linear-gradient(120deg,#b94d7b,#d6a64d);
-  color:white;
-  border:0;
-  padding:13px 22px;
-  border-radius:30px;
-  font-size:16px;
-  cursor:pointer;
-  margin:8px;
+  cursor: pointer;
+  border: none;
+  font-family: inherit;
 }
-button:hover { transform:scale(1.04); }
-#countdown {
-  display:flex;
-  justify-content:center;
-  gap:10px;
-  flex-wrap:wrap;
+
+.hero {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 30px 15px;
+  position: relative;
+  overflow: hidden;
 }
-.time {
-  background:#fff0f5;
-  border:1px solid #e6c17e;
-  padding:15px;
-  border-radius:14px;
-  min-width:85px;
+
+.hero h1 {
+  font-size: clamp(35px,7vw,70px);
+  color: #b77b32;
+  text-shadow: 0 2px 15px #fff;
+  animation: glow 2s infinite alternate;
 }
-.time strong { display:block; font-size:28px; color:#a83e70; }
+
+.hero h2 {
+  font-size: clamp(25px,5vw,42px);
+  margin: 20px;
+  color: #a94770;
+}
+
+.hero p {
+  font-size: 19px;
+  margin: 12px;
+}
+
+.gold {
+  color: #c28a39;
+}
+
+.main-btn {
+  background: linear-gradient(135deg,#bd7594,#d5a14b);
+  color: white;
+  padding: 16px 35px;
+  border-radius: 40px;
+  font-size: 18px;
+  margin: 25px;
+  box-shadow: 0 5px 20px #bd759466;
+  transition: .3s;
+}
+
+.main-btn:hover {
+  transform: scale(1.08);
+}
+
+@keyframes glow {
+  from {text-shadow: 0 0 5px white;}
+  to {text-shadow: 0 0 25px #e8b4c9;}
+}
+
+section {
+  padding: 65px 18px;
+}
+
+.section-title {
+  font-size: clamp(27px,5vw,42px);
+  color: #ad6380;
+  margin-bottom: 25px;
+}
+
+.message {
+  max-width: 750px;
+  margin: auto;
+  font-size: 20px;
+  line-height: 1.9;
+  padding: 30px;
+  background: #ffffffa6;
+  border: 1px solid #e6c58b;
+  border-radius: 20px;
+  box-shadow: 0 5px 25px #b87b8830;
+}
+
 .gallery {
-  display:grid;
-  grid-template-columns:repeat(auto-fit,minmax(145px,1fr));
-  gap:12px;
+  display: grid;
+  grid-template-columns: repeat(auto-fit,minmax(210px,1fr));
+  gap: 20px;
+  max-width: 1050px;
+  margin: auto;
 }
+
 .gallery img {
-  width:100%;
-  height:210px;
-  object-fit:cover;
-  border-radius:14px;
-  border:3px solid #e6c17e;
-  cursor:pointer;
+  width: 100%;
+  height: 270px;
+  object-fit: cover;
+  border: 6px solid white;
+  border-radius: 18px;
+  box-shadow: 0 5px 18px #a96a8340;
+  cursor: pointer;
+  transition: .4s;
 }
+
+.gallery img:hover {
+  transform: scale(1.04) rotate(1deg);
+}
+
+.photo-frame {
+  background: #fff9fa;
+  padding: 10px;
+  border-radius: 20px;
+}
+
+.photo-frame p {
+  padding: 12px;
+  color: #ad6380;
+}
+
+.balloon {
+  position: fixed;
+  bottom: -150px;
+  z-index: 5;
+  font-size: 55px;
+  cursor: pointer;
+  animation: fly 10s linear forwards;
+  user-select: none;
+}
+
+@keyframes fly {
+  from {transform: translateY(0) rotate(-8deg);}
+  to {transform: translateY(-125vh) rotate(12deg);}
+}
+
+.popup {
+  display: none;
+  position: fixed;
+  inset: 0;
+  background: #351b2bbd;
+  z-index: 20;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+}
+
+.popup-box {
+  background: linear-gradient(135deg,#fff0f5,#fff8e8);
+  border: 2px solid #d7ae6c;
+  border-radius: 25px;
+  padding: 35px 25px;
+  max-width: 420px;
+  width: 100%;
+  animation: appear .4s ease;
+}
+
+.popup-box h2 {
+  color: #b16c83;
+  margin-bottom: 15px;
+}
+
+.popup-box p {
+  font-size: 20px;
+  line-height: 1.6;
+}
+
+.close-btn {
+  background: #b66b87;
+  color: white;
+  padding: 12px 25px;
+  border-radius: 30px;
+  margin-top: 20px;
+}
+
+@keyframes appear {
+  from {transform: scale(.7);opacity: 0;}
+  to {transform: scale(1);opacity: 1;}
+}
+
+.cake {
+  font-size: 105px;
+  margin: 15px;
+  animation: bounce 2s infinite;
+}
+
+@keyframes bounce {
+  50% {transform: translateY(-12px);}
+}
+
 .letter {
-  display:none;
-  text-align:left;
-  line-height:1.9;
-  background:#fff6fa;
-  padding:22px;
-  border-radius:15px;
+  max-width: 700px;
+  margin: auto;
+  padding: 35px;
+  background: #fffaf0;
+  border: 2px dashed #d3a65f;
+  border-radius: 20px;
+  line-height: 2;
+  font-size: 19px;
 }
-#cake { font-size:105px; cursor:pointer; }
-footer { padding:30px; color:#a83e70; }
-#photoViewer {
-  display:none;
-  position:fixed;
-  inset:0;
-  background:#000d;
-  z-index:10;
-  align-items:center;
-  justify-content:center;
-  padding:20px;
+
+.countdown {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin: 25px;
 }
-#photoViewer img { max-width:95%; max-height:85vh; border-radius:15px; }
-#fireworks {
-  position:fixed;
-  inset:0;
-  pointer-events:none;
-  z-index:5;
+
+.countdown div {
+  background: #fff;
+  border: 1px solid #dfb976;
+  border-radius: 14px;
+  padding: 15px;
+  min-width: 75px;
 }
-.heart { color:#d77b9e; font-size:23px; }
+
+.countdown strong {
+  display: block;
+  font-size: 28px;
+  color: #b66b87;
+}
+
+.music-btn {
+  position: fixed;
+  right: 15px;
+  bottom: 15px;
+  z-index: 10;
+  border-radius: 50px;
+  padding: 13px 18px;
+  color: white;
+  background: #b66b87;
+  box-shadow: 0 4px 15px #0002;
+}
+
+.confetti {
+  position: fixed;
+  top: -15px;
+  z-index: 30;
+  pointer-events: none;
+  animation: fall 3s linear forwards;
+}
+
+@keyframes fall {
+  to {transform: translateY(110vh) rotate(720deg);opacity: 0;}
+}
+
+footer {
+  background: #f5dce5;
+  padding: 30px;
+  font-size: 18px;
+}
+
+#lightbox img {
+  max-width: 95%;
+  max-height: 75vh;
+  border: 5px solid white;
+  border-radius: 15px;
+}
+
+@media(max-width:600px) {
+  section {padding: 45px 14px;}
+  .message {padding: 22px;font-size: 18px;}
+  .gallery {grid-template-columns: repeat(2,minmax(0,1fr));gap: 10px;}
+  .gallery img {height: 190px;}
+}
 </style>
 </head>
 
 <body>
-<canvas id="fireworks"></canvas>
 
-<header>
-  <div class="heart">♡ ✨ ♡ ✨ ♡</div>
-  <p class="gold">A SPECIAL DAY FOR SOMEONE SPECIAL</p>
-  <h1>Happy Birthday<br>Sudhi ❤️</h1>
-  <p>Today, tomorrow and always, you deserve all the happiness in the world.</p>
-  <button onclick="celebrate()">✨ Start the Surprise</button>
-</header>
+<!-- WELCOME -->
+<div class="hero" id="home">
+  <p class="gold">✨ A SPECIAL DAY FOR A SPECIAL PERSON ✨</p>
+  <h1>Happy Birthday</h1>
+  <h2>Sudhi ❤️</h2>
+  <p>Someone special deserves something magical...</p>
+  <p>Today, the world celebrates YOU! 🌸</p>
 
+  <button class="main-btn" onclick="startSurprise()">
+    Open Your Surprise 💝
+  </button>
+
+  <div style="font-size:45px">🎈 🌷 ✨ 🎂 ✨ 🌷 🎈</div>
+</div>
+
+<!-- COUNTDOWN -->
 <section>
-  <h2>🎂 The Birthday Countdown</h2>
-  <div id="countdown">
-    <div class="time"><strong id="days">0</strong>Days</div>
-    <div class="time"><strong id="hours">0</strong>Hours</div>
-    <div class="time"><strong id="minutes">0</strong>Minutes</div>
-    <div class="time"><strong id="seconds">0</strong>Seconds</div>
-  </div>
-  <p id="countMessage"></p>
-</section>
+  <h2 class="section-title">The Special Day ✨</h2>
+  <p>Counting every moment until your birthday!</p>
 
-<section>
-  <h2>💗 A Little Celebration</h2>
-  <div id="cake" onclick="blowCandles()">🎂</div>
-  <p id="cakeMessage">Tap the cake to make a birthday wish!</p>
-  <button onclick="blowCandles()">Blow the Candles 🕯️</button>
-</section>
-
-<section>
-  <h2>📸 Our Beautiful Memories</h2>
-  <p class="gold">Every picture holds a special memory ❤️</p>
-  <div class="gallery">
-    <img src="photo1.jpeg" alt="Memory 1" onclick="openPhoto(this.src)" onerror="this.style.display='none'">
-    <img src="photo2.jpeg" alt="Memory 2" onclick="openPhoto(this.src)" onerror="this.style.display='none'">
-    <img src="photo3.jpeg" alt="Memory 3" onclick="openPhoto(this.src)" onerror="this.style.display='none'">
-    <img src="photo4.jpeg" alt="Memory 4" onclick="openPhoto(this.src)" onerror="this.style.display='none'">
-    <img src="photo5.jpeg" alt="Memory 4" onclick="openPhoto(this.src)" onerror="this.style.display='none'">
-    <img src="photo6.jpeg" alt="Memory 4" onclick="openPhoto(this.src)" onerror="this.style.display='none'">
-    <img src="photo7.jpeg" alt="Memory 4" onclick="openPhoto(this.src)" onerror="this.style.display='none'">
-  </div>
-  <p id="photoMessage">Our memories are my favourite treasure.</p>
-</section>
-
-<section>
-  <h2>💌 A Letter From My Heart</h2>
-  <button onclick="openLetter()">Open Your Special Letter ❤️</button>
-  <div class="letter" id="letter">
-    <h3>To My Dearest Sudhi ❤️</h3>
-    <p>My Love,</p>
-    <p>Happy Birthday, Sudhi! ❤️</p>
-    <p>Today is not just your birthday. It is a celebration of the beautiful person you are and the happiness you bring into my life.</p>
-    <p>I wish you endless happiness, good health, success and all the beautiful things your heart dreams of. May every challenge make you stronger and every new day bring you a reason to smile.</p>
-    <p>Thank you for being a special part of my life. I hope we create countless beautiful memories together, share endless laughter and stand beside each other through every season of life.</p>
-    <p>No matter how many birthdays come and go, I wish to keep celebrating you and making you feel loved.</p>
-    <p><strong>Happy Birthday once again, Sudhi! ❤️</strong></p>
-    <p>With all my love,<br>Your special person 💗</p>
+  <div class="countdown" id="countdown">
+    <div><strong id="days">00</strong>Days</div>
+    <div><strong id="hours">00</strong>Hours</div>
+    <div><strong id="minutes">00</strong>Minutes</div>
+    <div><strong id="seconds">00</strong>Seconds</div>
   </div>
 </section>
 
+<!-- BIRTHDAY MESSAGE -->
 <section>
-  <h2>🎶 A Song For You</h2>
-  <p>Tap below to play your special song.</p>
-  <audio id="music" loop>
-    <source src="Music.mp3" type="audio/mpeg">
-  </audio>
-  <button id="musicButton" onclick="toggleMusic()">🎵 Play Music</button>
-  <p id="musicMessage"></p>
+  <h2 class="section-title">A Little Birthday Magic 💗</h2>
+
+  <div class="message">
+    Today isn't just another day...
+
+    It's the day someone wonderful came into this world.
+
+    May your life always be filled with happiness,
+    endless laughter, beautiful memories and dreams
+    that come true.
+
+    You deserve all the beautiful things life has to offer.
+
+    <br><br>
+    <span class="gold">You are special. Never forget that! ❤️</span>
+  </div>
+</section>
+
+<!-- BALLOONS -->
+<section>
+  <h2 class="section-title">Pop the Balloons! 🎈</h2>
+  <div class="message">
+    Each balloon is carrying a little secret message for you.
+
+    <br><br>
+    Click the flying balloons and discover your surprises!
+  </div>
+  <button class="main-btn" onclick="launchBalloons()">
+    Release More Balloons 🎈
+  </button>
+</section>
+
+<!-- GALLERY -->
+<section>
+  <h2 class="section-title">Our Beautiful Memories 📸</h2>
+  <p style="margin-bottom:25px">Every picture holds a special moment.</p>
+
+  <div class="gallery" id="gallery"></div>
+</section>
+
+<!-- CAKE -->
+<section>
+  <h2 class="section-title">Make a Birthday Wish! 🎂</h2>
+
+  <div class="cake" id="cake">🎂</div>
+
+  <p style="font-size:19px;margin:15px">
+    Close your eyes, make a wish and celebrate!
+  </p>
+
+  <button class="main-btn" onclick="celebrate()">
+    Make a Wish ✨
+  </button>
+</section>
+
+<!-- LETTER -->
+<section>
+  <h2 class="section-title">A Special Letter 💌</h2>
+
+  <div class="letter">
+    <h2 style="color:#b66b87;margin-bottom:15px">
+      Dear Sudhi ❤️
+    </h2>
+
+    On your special day, I wish you more than just a happy birthday.
+
+    I wish you a life full of peace, success, good health,
+    beautiful surprises and unforgettable memories.
+
+    May every new chapter bring you something wonderful.
+
+    May your smile never fade and may your dreams
+    always find their way to reality.
+
+    Thank you for being YOU.
+
+    <br><br>
+    With lots of love,
+
+    <br>
+    <strong class="gold">Happy Birthday! ❤️</strong>
+  </div>
 </section>
 
 <footer>
-  Made with endless love ❤️<br>
-  Especially for Sudhi ✨
+  Made with endless love ❤️
+  <br><br>
+  Once again, Happy Birthday Sudhi! 🎉
 </footer>
 
-<div id="photoViewer" onclick="closePhoto()">
-  <img id="largePhoto" src="" alt="Enlarged memory">
+<!-- MUSIC -->
+<audio id="birthdayMusic" loop>
+  <source src="Music.mp3" type="audio/mpeg">
+</audio>
+
+<button class="music-btn" id="musicButton" onclick="toggleMusic()">
+  🎵 Play Music
+</button>
+
+<!-- MESSAGE POPUP -->
+<div class="popup" id="messagePopup">
+  <div class="popup-box">
+    <h2>🎁 A Secret Message!</h2>
+    <p id="secretMessage"></p>
+    <button class="close-btn" onclick="closePopup()">Close ❤️</button>
+  </div>
+</div>
+
+<!-- PHOTO LIGHTBOX -->
+<div class="popup" id="lightbox" onclick="closeLightbox()">
+  <div>
+    <img id="largePhoto" src="" alt="Memory">
+    <p style="color:white;margin-top:12px">Tap anywhere to close ✨</p>
+  </div>
 </div>
 
 <script>
-const birthday = new Date("2026-11-29T00:00:00+05:30").getTime();
+const photos = [
+  "photo1.jpeg",
+  "photo2.jpeg",
+  "photo3.jpeg",
+  "photo4.jpeg",
+  "photo5.jpeg",
+  "photo6.jpeg",
+  "photo7.jpeg"
+];
 
+const captions = [
+  "A beautiful memory ❤️",
+  "A moment to remember 🌸",
+  "A special smile ✨",
+  "Memories forever 💗",
+  "Happiness captured 📸",
+  "Another lovely moment 🌷",
+  "Always special ❤️"
+];
+
+const messages = [
+  "You are one of a kind! Never change. ❤️",
+  "May your smile shine brighter every day! ✨",
+  "You deserve all the happiness in the world. 🌸",
+  "May all your dreams come true! 💝",
+  "Sending you a thousand hugs and endless love! 🤗",
+  "Keep smiling, keep shining, keep being amazing! 🌟",
+  "Today is all about YOU! Enjoy every moment! 🎂",
+  "May your future be more beautiful than your dreams! 💗",
+  "A little reminder: You are truly special! ❤️",
+  "Wishing you endless adventures and beautiful memories! 🎈"
+];
+
+let musicStarted = false;
+let balloonTimer;
+
+const audio = document.getElementById("birthdayMusic");
+
+function startSurprise() {
+  document.getElementById("home").scrollIntoView({behavior:"smooth"});
+  audio.play().then(() => {
+    musicStarted = true;
+    updateMusicButton();
+  }).catch(() => {});
+  launchBalloons();
+  confetti();
+  document.getElementById("gallery").scrollIntoView({behavior:"smooth",block:"center"});
+}
+
+function toggleMusic() {
+  if(audio.paused) {
+    audio.play().then(() => {
+      musicStarted = true;
+      updateMusicButton();
+    }).catch(() => {
+      alert("Please check that Music.mp3 is uploaded correctly.");
+    });
+  } else {
+    audio.pause();
+    updateMusicButton();
+  }
+}
+
+function updateMusicButton() {
+  document.getElementById("musicButton").textContent =
+    audio.paused ? "🎵 Play Music" : "⏸ Pause Music";
+}
+
+audio.addEventListener("error", () => {
+  console.log("Music file could not be loaded. Check Music.mp3 filename.");
+});
+
+function loadGallery() {
+  const gallery = document.getElementById("gallery");
+
+  photos.forEach((photo,index) => {
+    const frame = document.createElement("div");
+    frame.className = "photo-frame";
+
+    const img = document.createElement("img");
+    img.src = photo;
+    img.alt = captions[index];
+    img.loading = "lazy";
+
+    img.onclick = () => openPhoto(photo);
+
+    img.onerror = () => {
+      img.alt = "Image not found: " + photo;
+      img.style.display = "none";
+      const warning = document.createElement("p");
+      warning.textContent = "Please check file: " + photo;
+      frame.appendChild(warning);
+    };
+
+    const caption = document.createElement("p");
+    caption.textContent = captions[index];
+
+    frame.appendChild(img);
+    frame.appendChild(caption);
+    gallery.appendChild(frame);
+  });
+}
+
+function openPhoto(photo) {
+  document.getElementById("largePhoto").src = photo;
+  document.getElementById("lightbox").style.display = "flex";
+}
+
+function closeLightbox() {
+  document.getElementById("lightbox").style.display = "none";
+}
+
+function launchBalloons() {
+  const colors = ["🎈","💗","💝","🎈","💕","🎈"];
+
+  for(let i=0;i<12;i++) {
+    setTimeout(() => {
+      const balloon = document.createElement("div");
+      balloon.className = "balloon";
+      balloon.textContent = colors[Math.floor(Math.random()*colors.length)];
+      balloon.style.left = Math.random()*90 + "vw";
+      balloon.style.animationDuration = (7+Math.random()*5)+"s";
+
+      balloon.onclick = () => {
+        const message = messages[Math.floor(Math.random()*messages.length)];
+        document.getElementById("secretMessage").textContent = message;
+        document.getElementById("messagePopup").style.display = "flex";
+        balloon.remove();
+        confetti(20);
+      };
+
+      document.body.appendChild(balloon);
+      setTimeout(() => balloon.remove(),13000);
+    },i*350);
+  }
+}
+
+function closePopup() {
+  document.getElementById("messagePopup").style.display = "none";
+}
+
+function confetti(amount=100) {
+  const symbols = ["✨","💗","🎉","🌸","⭐","💛"];
+
+  for(let i=0;i<amount;i++) {
+    const piece = document.createElement("div");
+    piece.className = "confetti";
+    piece.textContent = symbols[Math.floor(Math.random()*symbols.length)];
+    piece.style.left = Math.random()*100+"vw";
+    piece.style.fontSize = (12+Math.random()*20)+"px";
+    piece.style.animationDuration = (2+Math.random()*3)+"s";
+
+    document.body.appendChild(piece);
+    setTimeout(() => piece.remove(),5500);
+  }
+}
+
+function celebrate() {
+  const cake = document.getElementById("cake");
+  cake.textContent = "🎂✨🎉";
+  confetti(150);
+  launchBalloons();
+  document.getElementById("secretMessage").textContent =
+    "Your birthday wish is on its way! May it come true. Happy Birthday Sudhi! ❤️";
+  document.getElementById("messagePopup").style.display = "flex";
+}
+
+// Countdown to 29 November 2026, midnight IST
 function updateCountdown() {
+  const target = new Date("2026-11-29T00:00:00+05:30").getTime();
   const now = Date.now();
-  let difference = birthday - now;
+  let diff = target-now;
 
-  if (difference <= 0) {
-    document.getElementById("days").textContent = "0";
-    document.getElementById("hours").textContent = "0";
-    document.getElementById("minutes").textContent = "0";
-    document.getElementById("seconds").textContent = "0";
-    document.getElementById("countMessage").textContent =
-      "It's Sudhi's birthday! Happy Birthday! ❤️";
+  if(diff <= 0) {
+    document.getElementById("countdown").innerHTML =
+      "<h2 class='gold'>🎉 IT'S YOUR BIRTHDAY! 🎂</h2>";
     return;
   }
 
-  const d = Math.floor(difference / 86400000);
-  const h = Math.floor((difference % 86400000) / 3600000);
-  const m = Math.floor((difference % 3600000) / 60000);
-  const s = Math.floor((difference % 60000) / 1000);
+  const days = Math.floor(diff/86400000);
+  diff %= 86400000;
+  const hours = Math.floor(diff/3600000);
+  diff %= 3600000;
+  const minutes = Math.floor(diff/60000);
+  const seconds = Math.floor((diff%60000)/1000);
 
-  document.getElementById("days").textContent = d;
-  document.getElementById("hours").textContent = h;
-  document.getElementById("minutes").textContent = m;
-  document.getElementById("seconds").textContent = s;
-  document.getElementById("countMessage").textContent =
-    "Counting every moment until your special day! 💗";
+  document.getElementById("days").textContent = days;
+  document.getElementById("hours").textContent = hours;
+  document.getElementById("minutes").textContent = minutes;
+  document.getElementById("seconds").textContent = seconds;
 }
+
+loadGallery();
 updateCountdown();
 setInterval(updateCountdown,1000);
 
-function toggleMusic() {
-  const music = document.getElementById("music");
-  const button = document.getElementById("musicButton");
-  const message = document.getElementById("musicMessage");
-
-  if (music.paused) {
-    music.play().then(() => {
-      button.textContent = "⏸ Pause Music";
-      message.textContent = "Playing your special song ❤️";
-    }).catch(() => {
-      message.textContent = "Please check that Music.mp3 is uploaded correctly.";
-    });
-  } else {
-    music.pause();
-    button.textContent = "🎵 Play Music";
-    message.textContent = "Music paused.";
+// Gentle floating balloons
+balloonTimer = setInterval(() => {
+  if(document.querySelectorAll(".balloon").length < 8) {
+    const balloon = document.createElement("div");
+    balloon.className = "balloon";
+    balloon.textContent = "🎈";
+    balloon.style.left = Math.random()*95+"vw";
+    balloon.style.animationDuration = "12s";
+    balloon.onclick = () => {
+      document.getElementById("secretMessage").textContent =
+        messages[Math.floor(Math.random()*messages.length)];
+      document.getElementById("messagePopup").style.display = "flex";
+      balloon.remove();
+    };
+    document.body.appendChild(balloon);
+    setTimeout(()=>balloon.remove(),13000);
   }
-}
-
-function blowCandles() {
-  document.getElementById("cake").textContent = "🎂✨";
-  document.getElementById("cakeMessage").textContent =
-    "Your wish is on its way! May all your dreams come true, Sudhi! ❤️";
-  celebrate();
-}
-
-function openLetter() {
-  const letter = document.getElementById("letter");
-  letter.style.display = letter.style.display === "block" ? "none" : "block";
-}
-
-function openPhoto(src) {
-  document.getElementById("largePhoto").src = src;
-  document.getElementById("photoViewer").style.display = "flex";
-}
-
-function closePhoto() {
-  document.getElementById("photoViewer").style.display = "none";
-}
-
-const canvas = document.getElementById("fireworks");
-const ctx = canvas.getContext("2d");
-let particles = [];
-
-function resizeCanvas() {
-  canvas.width = window.innerWidth;
-  canvas.height = window.innerHeight;
-}
-resizeCanvas();
-window.addEventListener("resize",resizeCanvas);
-
-function celebrate() {
-  for(let i=0;i<100;i++) {
-    const angle = Math.random()*Math.PI*2;
-    const speed = Math.random()*5+1;
-    particles.push({
-      x:Math.random()*canvas.width,
-      y:Math.random()*canvas.height*0.6,
-      vx:Math.cos(angle)*speed,
-      vy:Math.sin(angle)*speed,
-      life:90,
-      size:Math.random()*4+2
-    });
-  }
-}
-
-function drawParticles() {
-  ctx.clearRect(0,0,canvas.width,canvas.height);
-  particles.forEach(p => {
-    p.x += p.vx;
-    p.y += p.vy;
-    p.vy += 0.025;
-    p.life--;
-    ctx.fillStyle = Math.random() > 0.5 ? "#d6a64d" : "#e58aaf";
-    ctx.globalAlpha = Math.max(0,p.life/90);
-    ctx.beginPath();
-    ctx.arc(p.x,p.y,p.size,0,Math.PI*2);
-    ctx.fill();
-  });
-  ctx.globalAlpha = 1;
-  particles = particles.filter(p=>p.life>0);
-  requestAnimationFrame(drawParticles);
-}
-drawParticles();
+},3000);
 </script>
+
 </body>
 </html>
