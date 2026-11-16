@@ -132,10 +132,13 @@ footer { padding:30px; color:#a83e70; }
   <h2>📸 Our Beautiful Memories</h2>
   <p class="gold">Every picture holds a special memory ❤️</p>
   <div class="gallery">
-    <img src="photo1.jpg" alt="Memory 1" onclick="openPhoto(this.src)" onerror="this.style.display='none'">
-    <img src="photo2.jpg" alt="Memory 2" onclick="openPhoto(this.src)" onerror="this.style.display='none'">
-    <img src="photo3.jpg" alt="Memory 3" onclick="openPhoto(this.src)" onerror="this.style.display='none'">
-    <img src="photo4.jpg" alt="Memory 4" onclick="openPhoto(this.src)" onerror="this.style.display='none'">
+    <img src="photo1.jpeg" alt="Memory 1" onclick="openPhoto(this.src)" onerror="this.style.display='none'">
+    <img src="photo2.jpeg" alt="Memory 2" onclick="openPhoto(this.src)" onerror="this.style.display='none'">
+    <img src="photo3.jpeg" alt="Memory 3" onclick="openPhoto(this.src)" onerror="this.style.display='none'">
+    <img src="photo4.jpeg" alt="Memory 4" onclick="openPhoto(this.src)" onerror="this.style.display='none'">
+    <img src="photo5.jpeg" alt="Memory 4" onclick="openPhoto(this.src)" onerror="this.style.display='none'">
+    <img src="photo6.jpeg" alt="Memory 4" onclick="openPhoto(this.src)" onerror="this.style.display='none'">
+    <img src="photo7.jpeg" alt="Memory 4" onclick="openPhoto(this.src)" onerror="this.style.display='none'">
   </div>
   <p id="photoMessage">Our memories are my favourite treasure.</p>
 </section>
@@ -160,7 +163,7 @@ footer { padding:30px; color:#a83e70; }
   <h2>🎶 A Song For You</h2>
   <p>Tap below to play your special song.</p>
   <audio id="music" loop>
-    <source src="music.mp3" type="audio/mpeg">
+    <source src="Music.mp3" type="audio/mpeg">
   </audio>
   <button id="musicButton" onclick="toggleMusic()">🎵 Play Music</button>
   <p id="musicMessage"></p>
@@ -217,7 +220,7 @@ function toggleMusic() {
       button.textContent = "⏸ Pause Music";
       message.textContent = "Playing your special song ❤️";
     }).catch(() => {
-      message.textContent = "Please check that music.mp3 is uploaded correctly.";
+      message.textContent = "Please check that Music.mp3 is uploaded correctly.";
     });
   } else {
     music.pause();
